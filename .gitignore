@@ -1,0 +1,21 @@
+# Personal practice files
+
+practice/personal/
+*.tmp
+*.log
+
+#System Files
+
+.DS_Store
+Thumbs.db
+
+# Editor backups
+
+*~
+*.swp
+*.swo
+
+# Local configuration
+
+.env
+config.local
