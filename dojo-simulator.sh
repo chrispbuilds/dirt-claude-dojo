@@ -201,13 +201,22 @@ show_help() {
     echo "COMMANDS:"
     echo "  init                    Initialize your dojo training environment"
     echo "  start                   Begin daily session with Claude monitoring"
-    echo "  learn <topic>          Start learning a specific topic"
+    echo "  learn <topic>          Start learning a specific topic (legacy)"
+    echo "  nav [topic]            Browse available lessons and topics"
+    echo "  goto <lesson>          Jump directly to a specific lesson"
+    echo "  interactive <lesson>   Start interactive lesson with validation"
+    echo "  status                 Show current progress and next steps"
+    echo "  search <term>          Search lessons for specific content"
+    echo "  path                   Show recommended learning roadmap"
     echo "  help                   Show this help message"
     echo
     echo "EXAMPLES:"
     echo "  ./dojo-simulator.sh init"
     echo "  ./dojo-simulator.sh start" 
-    echo "  ./dojo-simulator.sh learn cli-basics"
+    echo "  ./dojo-simulator.sh nav cli-basics"
+    echo "  ./dojo-simulator.sh goto lesson-01-orientation"
+    echo "  ./dojo-simulator.sh interactive lesson-01-orientation"
+    echo "  ./dojo-simulator.sh search 'file operations'"
     echo
     echo "PHILOSOPHY:"
     echo "  From dirt claude poor to 10x developer through:"
@@ -215,6 +224,7 @@ show_help() {
     echo "  • SOCRATIC_METHOD: Claude guides, never provides answers"
     echo "  • PROGRESSIVE_DISCLOSURE: Earn advanced features"
     echo "  • LEARNING_BY_BUILDING: Curriculum grows with you"
+    echo "  • INTERACTIVE_PRACTICE: Real-time feedback and validation"
 }
 
 main() {
@@ -232,6 +242,15 @@ main() {
                 exit 1
             fi
             cmd_learn "$2"
+            ;;
+        "nav"|"browse"|"goto"|"interactive"|"status"|"search"|"path"|"review")
+            # Delegate to smart navigation system
+            if [[ -f "scripts/smart-navigation.sh" ]]; then
+                bash scripts/smart-navigation.sh "$@"
+            else
+                error "Navigation system not available"
+                exit 1
+            fi
             ;;
         "help"|"--help"|"-h")
             show_help
