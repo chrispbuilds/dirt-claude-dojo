@@ -1,0 +1,36 @@
+{
+  "user": {
+    "name": "",
+    "start_date": "",
+    "current_level": "dirt_clod",
+    "total_sessions": 0,
+    "streak_days": 0
+  },
+  "foundations": {
+    "cli_basics": {
+      "status": "locked",
+      "lessons_completed": 0,
+      "total_lessons": 12,
+      "mastery_score": 0
+    },
+    "version_control": {
+      "status": "locked", 
+      "lessons_completed": 0,
+      "total_lessons": 8,
+      "mastery_score": 0
+    },
+    "scripting": {
+      "status": "locked",
+      "lessons_completed": 0, 
+      "total_lessons": 15,
+      "mastery_score": 0
+    }
+  },
+  "achievements": [],
+  "last_session": null,
+  "learning_style": {
+    "preferred_pace": "steady",
+    "struggle_areas": [],
+    "strength_areas": []
+  }
+}

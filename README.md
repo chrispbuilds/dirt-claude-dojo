@@ -1,24 +1,25 @@
-# CLI Development Bootcamp
+# Dirt Claude Dojo 🥷
 
-An integrated learning system for mastering Terminal, Vim, Bash, and Git through hands-on practice.
+From dirt clod poor to 10x developer - Master CLI fundamentals with LLM partnership, not copy-paste dependency.
 
 ## Quick Start
 
 ```bash
-git clone [your-repo-url] cli-bootcamp
-cd cli-bootcamp
-./scripts/setup_bootcamp.sh
+git clone [your-repo-url] dirt-claude-dojo
+cd dirt-claude-dojo  
+./dojo init
 ```
 
-## Learning Philosophy
+## Philosophy: Dirt Clod to 10x Developer
 
-This bootcamp teaches development fundamentals through the CLI using an integrated approach where Terminal, Vim, Bash, and Git work together as a unified development environment.
+Learn to use LLMs as a thinking partner, not a crutch. Master fundamentals through deliberate practice.
 
-### Key Features
-- **Integrated Learning**: All tools taught in parallel
-- **Context Preservation**: Scripts maintain learning state
-- **LLM Compatible**: Designed for AI-assisted learning
-- **Self-Documenting**: Every step creates reusable artifacts
+### Core Principles
+- **NO_COPY_PASTE**: Type everything manually to build muscle memory
+- **LEARNING_BY_BUILDING**: Curriculum self-constructs as you progress  
+- **SOCRATIC_METHOD**: Claude guides you to answers, never provides them directly
+- **PROGRESSIVE_DISCLOSURE**: Features unlock based on proven mastery
+- **CONTEXT_PRESERVATION**: Maintain learning state across sessions
 
 ## Structure
 

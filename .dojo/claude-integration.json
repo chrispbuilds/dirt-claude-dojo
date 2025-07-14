@@ -1,0 +1,30 @@
+{
+  "session": {
+    "active": false,
+    "start_time": null,
+    "current_lesson": null,
+    "current_topic": null,
+    "learning_mode": "practice"
+  },
+  "user_state": {
+    "struggling_with": null,
+    "last_error": null,
+    "consecutive_failures": 0,
+    "needs_encouragement": false,
+    "ask_for_help_count": 0
+  },
+  "claude_behavior": {
+    "teaching_style": "socratic",
+    "intervention_threshold": 3,
+    "last_hint_time": null,
+    "hint_level": 1
+  },
+  "lesson_context": {
+    "topic": null,
+    "objective": null,
+    "current_step": 0,
+    "total_steps": 0,
+    "key_concepts": []
+  },
+  "event_log": []
+}
