@@ -76,7 +76,7 @@ type ClaudeIntegration struct {
 
 var rootCmd = &cobra.Command{
 	Use:   "dojo",
-	Short: "Dirt Claude Dojo - From dirt clod poor to 10x developer",
+	Short: "Dirt Claude Dojo - From dirt claude poor to 10x developer",
 	Long: `🥷 Dirt Claude Dojo
 
 Master CLI fundamentals through deliberate practice with LLM partnership.
@@ -166,7 +166,7 @@ func initializeDojo() {
 	progress := Progress{}
 	progress.User.Name = name
 	progress.User.StartDate = time.Now().Format("2006-01-02")
-	progress.User.CurrentLevel = "dirt_clod"
+	progress.User.CurrentLevel = "dirt_claude"
 	
 	// Initialize foundations
 	progress.Foundations = make(map[string]struct {

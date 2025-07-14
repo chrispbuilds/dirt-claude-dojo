@@ -95,7 +95,7 @@ test_dojo_init() {
     
     # Verify initial state
     local level=$(jq -r '.user.current_level' .dojo/progress.json)
-    if [[ "$level" != "dirt_clod" ]]; then
+    if [[ "$level" != "dirt_claude" ]]; then
         fail_test "dojo init" "Initial level incorrect: $level"
         return
     fi

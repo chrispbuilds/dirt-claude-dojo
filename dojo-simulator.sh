@@ -18,7 +18,7 @@ show_banner() {
     cat << 'BANNER'
 ╔═══════════════════════════════════════╗
 ║        Dirt Claude Dojo 🥷            ║
-║   From dirt clod poor to 10x dev     ║
+║   From dirt claude poor to 10x dev     ║
 ╚═══════════════════════════════════════╝
 BANNER
 }
@@ -44,7 +44,7 @@ cmd_init() {
   "user": {
     "name": "$name",
     "start_date": "$(date +%Y-%m-%d)",
-    "current_level": "dirt_clod",
+    "current_level": "dirt_claude",
     "total_sessions": 0,
     "streak_days": 0
   },
@@ -210,7 +210,7 @@ show_help() {
     echo "  ./dojo-simulator.sh learn cli-basics"
     echo
     echo "PHILOSOPHY:"
-    echo "  From dirt clod poor to 10x developer through:"
+    echo "  From dirt claude poor to 10x developer through:"
     echo "  • NO_COPY_PASTE: Build muscle memory by typing"
     echo "  • SOCRATIC_METHOD: Claude guides, never provides answers"
     echo "  • PROGRESSIVE_DISCLOSURE: Earn advanced features"

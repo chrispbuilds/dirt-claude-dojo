@@ -49,7 +49,7 @@ jq '.user.name' .dojo/progress.json
 
 # Initial state is correct
 jq '.user.current_level' .dojo/progress.json  
-# Should return: "dirt_clod"
+# Should return: "dirt_claude"
 
 jq '.foundations.cli_basics.status' .dojo/progress.json
 # Should return: "available"

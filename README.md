@@ -1,6 +1,6 @@
 # Dirt Claude Dojo 🥷
 
-From dirt clod poor to 10x developer - Master CLI fundamentals with LLM partnership, not copy-paste dependency.
+From dirt claude poor to 10x developer - Master CLI fundamentals with LLM partnership, not copy-paste dependency.
 
 ## Quick Start
 
@@ -10,7 +10,7 @@ cd dirt-claude-dojo
 ./dojo-simulator.sh init
 ```
 
-## Philosophy: Dirt Clod to 10x Developer
+## Philosophy: Dirt Claude to 10x Developer
 
 Learn to use LLMs as a thinking partner, not a crutch. Master fundamentals through deliberate practice.
 

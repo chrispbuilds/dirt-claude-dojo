@@ -101,4 +101,4 @@ Every Claude response should reinforce:
 - **Growth mindset**: Celebrate struggles as learning opportunities
 - **Muscle memory**: Emphasize typing and repetition over copying
 
-This creates the "dirt clod to 10x developer" transformation through guided discovery rather than spoon-feeding solutions.
+This creates the "dirt claude to 10x developer" transformation through guided discovery rather than spoon-feeding solutions.

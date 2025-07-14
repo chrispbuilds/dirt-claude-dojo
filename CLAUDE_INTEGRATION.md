@@ -182,4 +182,4 @@ Remember: The goal is to create **thinking developers**, not copy-paste programm
 - Create lasting muscle memory through typing
 - Foster curiosity about how systems work
 
-Every interaction should reinforce the "dirt clod to 10x developer" philosophy through deliberate practice and guided discovery.
+Every interaction should reinforce the "dirt claude to 10x developer" philosophy through deliberate practice and guided discovery.
