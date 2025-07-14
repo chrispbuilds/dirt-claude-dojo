@@ -1,42 +1,59 @@
 # Dirt Claude Dojo 🥷
 
-From dirt claude poor to 10x developer - Master CLI fundamentals with LLM partnership, not copy-paste dependency.
+From dirt claude poor to 10x developer - Learn programming from first principles. No magic, no shortcuts, just you and your curiosity.
 
-## Quick Start
+## Start Here
 
 ```bash
-git clone https://github.com/chrispbuilds/dirt-claude-dojo.git
-cd dirt-claude-dojo  
-./dojo-simulator.sh init
+cat start.md
 ```
 
-## Philosophy: Dirt Claude to 10x Developer
+That's it. Everything else you build yourself.
 
-Learn to use LLMs as a thinking partner, not a crutch. Master fundamentals through deliberate practice.
+## Philosophy
+
+Real programmers build their own tools. You'll start with `echo "Hello World"` and gradually build the infrastructure to track your own progress.
 
 ### Core Principles
-- **NO_COPY_PASTE**: Type everything manually to build muscle memory
-- **LEARNING_BY_BUILDING**: Curriculum self-constructs as you progress  
-- **SOCRATIC_METHOD**: Claude guides you to answers, never provides them directly
-- **PROGRESSIVE_DISCLOSURE**: Features unlock based on proven mastery
-- **CONTEXT_PRESERVATION**: Maintain learning state across sessions
+- **NO_COPY_PASTE**: Type everything to build muscle memory
+- **FIRST_PRINCIPLES**: Start simple, build complexity gradually
+- **CHOOSE_YOUR_PATH**: Every lesson offers multiple directions
+- **BUILD_YOUR_TOOLS**: Create the infrastructure as you learn
+
+## What You'll Build
+
+As you progress, you'll create:
+- Your own progress tracking system
+- Custom learning scripts
+- Personal development tools
+- Project management utilities
+
+All from scratch. All by hand. All understood.
 
 ## Structure
 
-- `curriculum/` - Lesson plans and learning materials
-- `scripts/` - Environment setup and utility scripts  
-- `practice/` - Student workspace and exercises
-- `data/` - Sample data for processing practice
-- `exercises/` - Advanced challenges and projects
+```
+dirt-claude-dojo/
+├── start.md           # Begin here
+├── lessons/           # Choose your own adventure
+│   ├── files.md
+│   ├── variables.md
+│   ├── commands.md
+│   └── first-script.md
+└── challenges/        # Projects to build
+    └── progress-tracker.md
+```
 
-## Usage
+## The Journey
 
-Each day builds on the previous, creating scripts that preserve and recreate the learning environment. Perfect for:
-- Self-paced learning
-- LLM-assisted education
-- Team training programs
-- Educational tool development
+1. **Start**: Basic commands and concepts
+2. **Build**: Create your first scripts
+3. **Track**: Build a progress system
+4. **Expand**: Add features you want
+5. **Share**: Teach others what you've learned
 
-## Contributing
+Every expert was once a beginner. Begin.
 
-This system is designed to be extended and improved. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+---
+
+*"The best way to learn programming is to program."*
