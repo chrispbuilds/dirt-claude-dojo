@@ -92,7 +92,14 @@ cmd_start() {
     local sessions=$(jq -r '.user.total_sessions' "$PROGRESS_FILE")
     
     # Update session count
-    jq '.user.total_sessions += 1' "$PROGRESS_FILE" > temp.json && mv temp.json "$PROGRESS_FILE"
+    local temp_file=$(mktemp)
+    if jq '.user.total_sessions += 1' "$PROGRESS_FILE" > "$temp_file"; then
+        mv "$temp_file" "$PROGRESS_FILE"
+    else
+        rm -f "$temp_file"
+        warn "Failed to update session count"
+        return 1
+    fi
     
     # Create Claude integration state
     cat > "$CLAUDE_FILE" << EOF
@@ -149,13 +156,20 @@ cmd_learn() {
             local name=$(jq -r '.user.name' "$PROGRESS_FILE")
             
             # Update Claude integration
-            jq --arg topic "$topic" '
+            local temp_file=$(mktemp)
+            if jq --arg topic "$topic" '
                 .session.current_topic = $topic |
                 .lesson_context.topic = $topic |
                 .lesson_context.objective = "Master terminal navigation, file operations, and basic commands" |
                 .lesson_context.total_steps = 12 |
                 .lesson_context.key_concepts = ["pwd", "ls", "cd", "mkdir", "touch", "cp", "mv", "rm"]
-            ' "$CLAUDE_FILE" > temp.json && mv temp.json "$CLAUDE_FILE"
+            ' "$CLAUDE_FILE" > "$temp_file"; then
+                mv "$temp_file" "$CLAUDE_FILE"
+            else
+                rm -f "$temp_file"
+                warn "Failed to update Claude integration"
+                return 1
+            fi
             
             # Log lesson start
             log_event "lesson_start" "$name" "Started lesson: $topic"
@@ -248,7 +262,7 @@ main() {
             if [[ -f "scripts/smart-navigation.sh" ]]; then
                 bash scripts/smart-navigation.sh "$@"
             else
-                error "Navigation system not available"
+                warn "Navigation system not available"
                 exit 1
             fi
             ;;

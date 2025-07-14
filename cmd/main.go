@@ -18,28 +18,37 @@ const (
 	ClaudeFile  = ".dojo/claude-integration.json"
 )
 
+// Foundation represents a learning module with progress tracking
+type Foundation struct {
+	Status           string `json:"status"`
+	LessonsCompleted int    `json:"lessons_completed"`
+	TotalLessons     int    `json:"total_lessons"`
+	MasteryScore     int    `json:"mastery_score"`
+}
+
+// User represents user profile and learning progress
+type User struct {
+	Name         string `json:"name"`
+	StartDate    string `json:"start_date"`
+	CurrentLevel string `json:"current_level"`
+	TotalSessions int   `json:"total_sessions"`
+	StreakDays   int    `json:"streak_days"`
+}
+
+// LearningStyle tracks user preferences and performance
+type LearningStyle struct {
+	PreferredPace string   `json:"preferred_pace"`
+	StruggleAreas []string `json:"struggle_areas"`
+	StrengthAreas []string `json:"strength_areas"`
+}
+
 // Progress tracks user learning progress
 type Progress struct {
-	User struct {
-		Name         string    `json:"name"`
-		StartDate    string    `json:"start_date"`
-		CurrentLevel string    `json:"current_level"`
-		TotalSessions int      `json:"total_sessions"`
-		StreakDays   int       `json:"streak_days"`
-	} `json:"user"`
-	Foundations map[string]struct {
-		Status           string `json:"status"`
-		LessonsCompleted int    `json:"lessons_completed"`
-		TotalLessons     int    `json:"total_lessons"`
-		MasteryScore     int    `json:"mastery_score"`
-	} `json:"foundations"`
-	Achievements []string `json:"achievements"`
-	LastSession  *string  `json:"last_session"`
-	LearningStyle struct {
-		PreferredPace  string   `json:"preferred_pace"`
-		StruggleAreas  []string `json:"struggle_areas"`
-		StrengthAreas  []string `json:"strength_areas"`
-	} `json:"learning_style"`
+	User          User                   `json:"user"`
+	Foundations   map[string]Foundation  `json:"foundations"`
+	Achievements  []string              `json:"achievements"`
+	LastSession   *string               `json:"last_session"`
+	LearningStyle LearningStyle         `json:"learning_style"`
 }
 
 // ClaudeIntegration manages Claude Code communication
@@ -169,47 +178,25 @@ func initializeDojo() {
 	progress.User.CurrentLevel = "dirt_claude"
 	
 	// Initialize foundations
-	progress.Foundations = make(map[string]struct {
-		Status           string `json:"status"`
-		LessonsCompleted int    `json:"lessons_completed"`
-		TotalLessons     int    `json:"total_lessons"`
-		MasteryScore     int    `json:"mastery_score"`
-	})
-	
-	progress.Foundations["cli_basics"] = struct {
-		Status           string `json:"status"`
-		LessonsCompleted int    `json:"lessons_completed"`
-		TotalLessons     int    `json:"total_lessons"`
-		MasteryScore     int    `json:"mastery_score"`
-	}{
-		Status:           "available",
-		LessonsCompleted: 0,
-		TotalLessons:     12,
-		MasteryScore:     0,
-	}
-	
-	progress.Foundations["version_control"] = struct {
-		Status           string `json:"status"`
-		LessonsCompleted int    `json:"lessons_completed"`
-		TotalLessons     int    `json:"total_lessons"`
-		MasteryScore     int    `json:"mastery_score"`
-	}{
-		Status:           "locked",
-		LessonsCompleted: 0,
-		TotalLessons:     8,
-		MasteryScore:     0,
-	}
-	
-	progress.Foundations["scripting"] = struct {
-		Status           string `json:"status"`
-		LessonsCompleted int    `json:"lessons_completed"`
-		TotalLessons     int    `json:"total_lessons"`
-		MasteryScore     int    `json:"mastery_score"`
-	}{
-		Status:           "locked",
-		LessonsCompleted: 0,
-		TotalLessons:     15,
-		MasteryScore:     0,
+	progress.Foundations = map[string]Foundation{
+		"cli_basics": {
+			Status:           "available",
+			LessonsCompleted: 0,
+			TotalLessons:     12,
+			MasteryScore:     0,
+		},
+		"version_control": {
+			Status:           "locked",
+			LessonsCompleted: 0,
+			TotalLessons:     8,
+			MasteryScore:     0,
+		},
+		"scripting": {
+			Status:           "locked",
+			LessonsCompleted: 0,
+			TotalLessons:     15,
+			MasteryScore:     0,
+		},
 	}
 	
 	saveProgress(progress)
@@ -284,7 +271,10 @@ func startLesson(topic string) {
 	}
 	
 	// Update Claude integration
-	claude, _ := loadClaudeIntegration()
+	claude, err := loadClaudeIntegration()
+	if err != nil {
+		claude = ClaudeIntegration{}
+	}
 	claude.Session.CurrentTopic = &topic
 	claude.LessonContext.Topic = &topic
 	
