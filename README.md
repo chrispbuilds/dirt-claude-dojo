@@ -5,9 +5,9 @@ From dirt clod poor to 10x developer - Master CLI fundamentals with LLM partners
 ## Quick Start
 
 ```bash
-git clone [your-repo-url] dirt-claude-dojo
+git clone https://github.com/chrispbuilds/dirt-claude-dojo.git
 cd dirt-claude-dojo  
-./dojo init
+./dojo-simulator.sh init
 ```
 
 ## Philosophy: Dirt Clod to 10x Developer
